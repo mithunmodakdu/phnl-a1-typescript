@@ -14,6 +14,7 @@ console.log(formatString("Hello", false))
 
 
 
+
 function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
   const filteredItems = items.filter(item =>item.rating >= 4);
   return filteredItems;
@@ -27,6 +28,8 @@ const books = [
 console.log(filterByRating(books))
 
 
+
+
 function concatenateArrays<T>(...arrays: T[][]): T[]{
   let newArray : T[] = [];
   for(const array of arrays){
@@ -36,6 +39,9 @@ function concatenateArrays<T>(...arrays: T[][]): T[]{
 }
 console.log(concatenateArrays(["a", "b"], ["c"]));
 console.log(concatenateArrays([1, 2], [3, 4], [5]));
+
+
+
 
 class Vehicle {
   private make: string;
@@ -68,3 +74,47 @@ const myCar = new Car("Toyota", 2020, "Corolla");
 console.log(myCar.getInfo())
 console.log(myCar.getModel())
 
+
+
+
+function processValue(value: string | number): number {
+  if(typeof value === 'string'){
+    return value.length;
+  }else{
+    return value * 2;
+  }
+}
+console.log(processValue("hello"))
+console.log(processValue(10))
+
+
+
+
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null{
+  if(products.length === 0){
+    return null;
+  }
+
+  let highestPriceProduct = products[0];
+  for(let i = 1; i < products.length; i++){
+    if(products[i].price > highestPriceProduct.price){
+      highestPriceProduct = products[i];
+
+    }
+  }
+  return highestPriceProduct;
+
+}
+
+const products = [
+  { name: "Pen", price: 10 },
+  { name: "Notebook", price: 25 },
+  { name: "Bag", price: 50 }
+];
+
+console.log(getMostExpensiveProduct(products)); 
