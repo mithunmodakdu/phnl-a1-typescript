@@ -13,9 +13,8 @@ Enums in TypeScript are useful for:
 4. Enabling auto-completion and type checking in code editors
 
 
-
 ## Example of Numeric enum
-<pre> ```
+<pre> 
 enum Priority {
   Low = 1,
   Medium = 2,
@@ -23,13 +22,12 @@ enum Priority {
 }
 
 const mediumPriority: Priority = Priority.Medium;
-console.log(mediumPriority);  // Output: 2 <pre> ```
-
+console.log(mediumPriority);  // Output: 2 </pre>
 
 
 ## Example of string enum
 
-<pre> ```
+<pre> 
 enum UserRole {
   Guest = "GUEST",      
   User = "USER",       
@@ -37,4 +35,4 @@ enum UserRole {
 }
 
 const role: UserRole = UserRole.Admin;
-console.log(role);  // Output: "ADMIN" <pre> ```
+console.log(role);  // Output: "ADMIN" </pre>
